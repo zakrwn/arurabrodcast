@@ -17,4 +17,33 @@ if(message.content.startsWith(prefix + "bcall")) {
 }
 }); 
 
+
+
+
+
+
+
+client.on("message", message => {
+    const prefix = "$"
+              
+          if(!message.channel.guild) return;
+   if(message.author.bot) return;
+      if(message.content === "$image"){ 
+          const embed = new Discord.RichEmbed()
+  
+      .setTitle(`** Codes **`)
+  .setAuthor(message.author.username, message.guild.iconrURL)
+    .setColor("PURPLE")
+    .setImage(message.guild.iconURL)
+    .setURL(message.guild.iconrURL)
+                    .setTimestamp()
+
+   message.channel.send({embed});
+      }
+  });
+
+
+
+
+
 client.login(process.env.BOT_TOKEN);
