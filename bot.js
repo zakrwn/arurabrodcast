@@ -36,7 +36,7 @@ client.on("message", message => {
 
 client.on("message", (message) => {
     /// DREAM
-   if (message.content.startsWith(".new")) {     /// DREAM
+   if (message.content.startsWith("$new")) {     /// DREAM
         const reason = message.content.split(" ").slice(1).join(" ");     /// DREAM
         if (!message.guild.roles.exists("name", "Support Team")) return message.channel.send(`لازم تسوي رتبة اسمها \`Support Team\` وتنطي البوت ادمنيتر حتا يقدر يسوي الرومات ويعدل برمشنات`);
         if (message.guild.channels.exists("name", "ticket-{message.author.id}" + message.author.id)) return message.channel.send(`You already have a ticket open.`);    /// ALPHA CODES
@@ -68,12 +68,12 @@ client.on("message", (message) => {
     }
  
  
-  if (message.content.startsWith(".اغلاق")) {
+  if (message.content.startsWith("$اغلاق")) {
         if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`You can't use the close command outside of a ticket channel.`);
  
-       message.channel.send(`هل انت متأكد من اقفالك للتذكرة اذا متأكد اكتب نعم`)
+       message.channel.send(`هل انت متأكد ؟ نعم او لا`)
            .then((m) => {
-               message.channel.awaitMessages(response => response.content === '$confirm', {
+               message.channel.awaitMessages(response => response.content === 'نعم', {
                        max: 1,
                        time: 10000,
                        errors: ['time'],
