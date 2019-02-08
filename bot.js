@@ -59,7 +59,7 @@ client.on("message", (message) => {
             const embed = new Discord.RichEmbed()
                 .setColor(0xCF40FA)
                 .addField(`Hey ${message.author.username}!`, `تم فتح تذكرة الرجاء انتظار الى حين يأتي مشرف ويقوم بلرد عليك
-				( لأغلاق التكت اكتب .اغلاق ) `)
+				( لأغلاق التكت اكتب $اغلاق ) `)
                 .setTimestamp();
             c.send({
                 embed: embed
